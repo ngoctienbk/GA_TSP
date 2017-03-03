@@ -23,38 +23,18 @@ public class Population {
 		return population.get(i).getGene();
 	}
 
-	// get a Population
-	public ArrayList<Individual> getPopulation() {
-		return population;
-	}
-
-	// set Population
-	public void setPopulation(ArrayList<Individual> population) {
-		this.population = population;
-	}
-
 	// get the best Individual of Population - the Individual with minimum
 	// fitness
 	public Individual getBestIndividual() {
 		double min = population.get(0).getFitness();
 		int flag = 0;
-		for (int i = 1; i < defaultPopLength; i++) {
+		for (int i = 1; i < population.size(); i++) {
 			if (population.get(i).getFitness() < min) {
 				min = population.get(i).getFitness();
 				flag = i;
 			}
 		}
 		return population.get(flag);
-	}
-
-	// add and Individual to Population
-	public void addIndividual(Individual indiv) {
-		population.add(indiv);
-	}
-
-	// set to position
-	public void setIndividual(Individual indiv, int pos) {
-		population.add(pos, indiv);
 	}
 
 	// randomize tournament_size Individual, return which better fitness

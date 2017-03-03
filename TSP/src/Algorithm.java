@@ -10,8 +10,9 @@ public class Algorithm {
 		pop.initPopulation(); // initialize population
 		System.out.print("The best before: ");
 		pop.getBestIndividual().printIndiv(); // the best Individual before loop
+		Individual ind = new Individual();
 		// loop for 10000 times
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 10000; i++) {
 			Population new_pop = new Population(); // define a new population to
 													// store new individual
 			for (int j = 0; j < Population.defaultPopLength / 2; j++) {
@@ -37,7 +38,8 @@ public class Algorithm {
 			}
 			// add the best Indiv of old Population to the random position
 			// of new Population
-			new_pop.population.set(r.nextInt(Population.defaultPopLength), pop.getBestIndividual());
+			ind = pop.getBestIndividual();
+			new_pop.population.set(r.nextInt(Population.defaultPopLength), ind);
 			pop = new_pop;
 		}
 		// the best Individual after loop

@@ -22,7 +22,7 @@ public class Individual {
 		for (int i = 0; i < defaultGeneLength; i++) {
 			getGene().add(i + 1);
 		}
-		Collections.shuffle(getGene(), rand);
+		Collections.shuffle(getGene(),rand);
 	}
 
 	// get fitness of individual (sum of distances)
@@ -56,7 +56,7 @@ public class Individual {
 			}
 			String[] str = sCurrentLine.split(": "); // spilit from ": " string
 			num = Integer.parseInt(str[1]); // line 4 is containing number
-											// ofcities.
+											// of cities.
 			distances = new double[num][num]; // generate array n x n of
 												// distances
 			sCurrentLine = br.readLine(); // read line 5
@@ -90,7 +90,7 @@ public class Individual {
 				ex.printStackTrace();
 			}
 		}
-		return num;
+		return num; // return number of cities
 	}
 
 	// getter
